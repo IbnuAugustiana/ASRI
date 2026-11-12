@@ -15,10 +15,10 @@ return [
     'site_url' => env('PORTFOLIO_SITE_URL') ?: 'https://asri-portfolio.vercel.app',
 
     // `?:` supaya nilai kosong di .env tetap memakai bawaan di bawah.
-    'author'      => env('PORTFOLIO_AUTHOR') ?: 'Iben',
+    'author'      => env('PORTFOLIO_AUTHOR') ?: 'Ibnu Augustiana',
     'affiliation' => env('PORTFOLIO_AFFILIATION') ?: 'Sistem Informasi Telkom University',
     'linkedin'    => env('PORTFOLIO_LINKEDIN') ?: null,
-    'github'      => env('PORTFOLIO_GITHUB') ?: 'https://github.com/IbnuAugustiana',
+    'github'      => env('PORTFOLIO_GITHUB') ?: 'https://github.com/IbnuAugustiana/ASRI',
 
     /*
     | Tombol "coba akun demo" di halaman login (muncul hanya jika diisi).
