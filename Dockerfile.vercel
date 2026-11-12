@@ -70,4 +70,5 @@ ENV PORT=80 \
     APP_ROUTES_CACHE=/tmp/laravel/routes.php \
     APP_SERVICES_CACHE=/tmp/laravel/services.php
 
-CMD ["frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile"]
+# /tmp selalu kosong saat container menyala: buat dulu folder cache/view/storage yang ditulis Laravel & Caddy.
+CMD ["sh", "-c", "mkdir -p /tmp/laravel /tmp/views /tmp/storage/public /tmp/caddy/config /tmp/caddy/data && exec frankenphp run --config /etc/frankenphp/Caddyfile"]

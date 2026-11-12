@@ -66,7 +66,7 @@ class DataPenghuniController extends Controller
         }
 
         return response()->file(
-            storage_path('app/public/' . $doc->path_file)
+            Storage::disk('public')->path($doc->path_file)
         );
     }
 
@@ -98,7 +98,7 @@ class DataPenghuniController extends Controller
             '.' . $extension;
 
         return response()->download(
-            storage_path('app/public/' . $doc->path_file),
+            Storage::disk('public')->path($doc->path_file),
             $fileName
         );
     }
