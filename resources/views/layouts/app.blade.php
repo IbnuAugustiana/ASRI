@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="theme-color" content="#141A46">
     <title>@yield('title', 'Dashboard') | ASRI</title>
+    @include('partials.social-meta', ['title' => $__env->yieldContent('title', 'Dashboard') . ' | ASRI'])
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -638,8 +638,11 @@ html.lenis body { height: auto; }
 .site .footer a:not(.brand):hover { color: var(--leaf); }
 .site .footer__note { margin: 0 0 8px; font-size: .92rem; }
 .site .footer__note strong { color: #fff; }
-.site .footer__social { display: flex; gap: 8px; margin-top: 10px; }
-.site .footer__social a { display: grid !important; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: rgba(255, 255, 255, .08); font-size: 1.3rem; }
+.site .footer__social { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.site .footer .footer__social a { display: inline-flex; align-items: center; gap: 7px; margin: 0; padding: 7px 13px 7px 10px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 999px; background: rgba(255, 255, 255, .06); color: rgba(255, 255, 255, .82); font-size: .88rem; font-weight: 600; transition: color .2s, border-color .2s, background .2s; }
+.site .footer .footer__social a i { font-size: 1.05rem; line-height: 1; }
+.site .footer .footer__social a:hover { color: #fff; border-color: var(--leaf); background: rgba(46, 212, 138, .12); }
+.site .footer .footer__social a:focus-visible { outline: 2px solid var(--leaf); outline-offset: 2px; }
 .site .footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .1); font-size: .85rem; }
 @media (max-width: 900px) { .site .footer__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .site .footer__grid { grid-template-columns: 1fr; } }

@@ -278,7 +278,7 @@
                             </div>
                             <h3 class="news-card__title">{{ $n->judul }}</h3>
                             @if ($i === 0)
-                                <p class="news-card__excerpt">{{ Str::limit(strip_tags($n->konten), 160) }}</p>
+                                <p class="news-card__excerpt">{{ \App\Support\Text::excerpt($n->konten, 160) }}</p>
                             @endif
                         </div>
                         <span class="plate__glare" aria-hidden="true"></span>

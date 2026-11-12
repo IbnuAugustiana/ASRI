@@ -11,9 +11,14 @@
 */
 
 return [
-    'author'   => env('PORTFOLIO_AUTHOR'),
-    'linkedin' => env('PORTFOLIO_LINKEDIN'),
-    'github'   => env('PORTFOLIO_GITHUB'),
+    // Alamat publik situs; dipakai untuk URL absolut gambar pratinjau (og:image).
+    'site_url' => env('PORTFOLIO_SITE_URL') ?: 'https://asri-portfolio.vercel.app',
+
+    // `?:` supaya nilai kosong di .env tetap memakai bawaan di bawah.
+    'author'      => env('PORTFOLIO_AUTHOR') ?: 'Iben',
+    'affiliation' => env('PORTFOLIO_AFFILIATION') ?: 'Sistem Informasi Telkom University',
+    'linkedin'    => env('PORTFOLIO_LINKEDIN') ?: null,
+    'github'      => env('PORTFOLIO_GITHUB') ?: 'https://github.com/IbnuAugustiana',
 
     /*
     | Tombol "coba akun demo" di halaman login (muncul hanya jika diisi).

@@ -6,9 +6,10 @@
     <title>@yield('title', 'ASRI | Rusun Jakarta')</title>
     <meta name="description" content="@yield('meta_description', 'ASRI: cari unit rusun di Jakarta, ajukan sewa, unggah dokumen, dan bayar tagihan secara online.')">
     <meta name="theme-color" content="#141A46">
-    <meta property="og:title" content="@yield('title', 'ASRI | Rusun Jakarta')">
-    <meta property="og:description" content="@yield('meta_description', 'Sistem manajemen rusun digital: pengajuan sewa, survei, tagihan, dan laporan kerusakan.')">
-    <meta property="og:type" content="website">
+    @include('partials.social-meta', [
+        'title' => $__env->yieldContent('title', 'ASRI | Rusun Jakarta'),
+        'description' => $__env->yieldContent('meta_description', e('ASRI: cari unit rusun di Jakarta, ajukan sewa, unggah dokumen, dan bayar tagihan secara online.')),
+    ])
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,16 +160,18 @@
             <h2 class="footer__title">Tentang proyek</h2>
             <p class="footer__note">Proyek portofolio dibangun dengan Laravel, Three.js, dan GSAP.</p>
             @if (config('portfolio.author'))
-                <p class="footer__note">Dibuat oleh <strong>{{ config('portfolio.author') }}</strong></p>
+                <p class="footer__note">Dibuat oleh <strong>{{ config('portfolio.author') }}</strong>@if (config('portfolio.affiliation')), {{ config('portfolio.affiliation') }}@endif</p>
             @endif
-            <div class="footer__social">
-                @if (config('portfolio.linkedin'))
-                    <a href="{{ config('portfolio.linkedin') }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
-                @endif
-                @if (config('portfolio.github'))
-                    <a href="{{ config('portfolio.github') }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="ri-github-fill"></i></a>
-                @endif
-            </div>
+            @if (config('portfolio.github') || config('portfolio.linkedin'))
+                <div class="footer__social">
+                    @if (config('portfolio.github'))
+                        <a href="{{ config('portfolio.github') }}" target="_blank" rel="noopener"><i class="ri-github-fill" aria-hidden="true"></i> GitHub</a>
+                    @endif
+                    @if (config('portfolio.linkedin'))
+                        <a href="{{ config('portfolio.linkedin') }}" target="_blank" rel="noopener"><i class="ri-linkedin-box-fill" aria-hidden="true"></i> LinkedIn</a>
+                    @endif
+                </div>
+            @endif
         </div>
     </div>
     <div class="wrap footer__bottom">

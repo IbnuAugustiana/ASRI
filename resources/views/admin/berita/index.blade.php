@@ -57,7 +57,7 @@
                 {{ Str::limit($item->judul, 60) }}
             </h3>
             <p style="font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 16px;">
-                {{ Str::limit(strip_tags($item->konten), 100) }}
+                {{ \App\Support\Text::excerpt($item->konten, 100) }}
             </p>
         </div>
 

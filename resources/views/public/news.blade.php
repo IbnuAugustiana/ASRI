@@ -73,7 +73,7 @@
                                     <time datetime="{{ $n->published_at->toDateString() }}">{{ $n->published_at->translatedFormat('d F Y') }}</time>
                                 </div>
                                 <h2 class="news-card__title">{{ $n->judul }}</h2>
-                                <p class="news-card__excerpt">{{ Str::limit(strip_tags($n->konten), 110) }}</p>
+                                <p class="news-card__excerpt">{{ \App\Support\Text::excerpt($n->konten, 110) }}</p>
                             </div>
                             <span class="plate__glare" aria-hidden="true"></span>
                         </a>

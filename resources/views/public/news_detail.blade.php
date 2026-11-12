@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('title', $article->judul . ' | ASRI')
-@section('meta_description', Str::limit(strip_tags($article->konten), 150))
+@section('meta_description', \App\Support\Text::excerpt($article->konten, 150))
 
 @push('styles')
     {{-- Kelas perataan/ukuran teks dari editor Quill --}}
